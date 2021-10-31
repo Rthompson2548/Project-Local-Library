@@ -19,19 +19,31 @@
   </head>
 
   <body>
-    <header class="container-fluid bg-light border-bottom">
-      <nav class="row align-items-center">
-        <h1 class="h4 px-3">Local Library</h1>
+<header class="container-fluid bg-light shadow p-3 mb-5 bg-white rounded">     
+   <nav class="row align-items-center">
+        <h1 class="h4 px-4 font-weight-bold">Local Library</h1>
         <div class="col">
-          <ul class="nav py-3">
-            <li class="nav-item">
-              <a class="nav-link" href="./index.html">Overall Stats</a>
+          <ul class="nav pt-2 pb-1 justify-content-end">
+            <li class="nav-item mr-4 pr-4">
+              <a class="nav-link active pl-2" href="./index.html"
+                ><img
+                  src="https://img.icons8.com/material-sharp/40/000000/home.png"
+              /></a>
+              <p>Home</p>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="./books.html">Stats by Book</a>
+            <li class="nav-item mr-4 pr-4">
+              <a class="nav-link pl-4" href="./books.html"
+                ><img
+                  src="https://img.icons8.com/ios-glyphs/40/000000/statistics--v1.png"
+              /></a>
+              <p>Book Stats</p>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./accounts.html">Stats by Account</a>
+            <li class="nav-item mr-4">
+              <a class="nav-link mr-4 pr-4 ml-4" href="./accounts.html"
+                ><img
+                  src="https://img.icons8.com/ios-glyphs/40/000000/group.png"
+              /></a>
+              <p class="text-center">Account Stats</p>
             </li>
           </ul>
         </div>
@@ -39,12 +51,13 @@
     </header>
 
     <main class="container my-4">
-      <section class="row">
-        <nav class="col-5" style="max-height: 85vh">
+      <h2 class="font-weight-bold ml-4 mb-4 pb-4">Book Stats</h2>
+      <section class="row d-flex justify-content-center">
+        <nav class="col-9 ml-4 pl-4" style="max-height: 85vh">
           <div class="card mh-100 overflow-auto">
-            <div class="card-header">Books</div>
-            <ul id="books-list" class="list-group list-group-flush">
-              <li class="list-group-item">No books found...</li>
+            <div class="card-header bg-dark text-white font-weight-bold h4">Books</div>
+            <ul id="books-list" class="list-group list-group-flush font-weight-bold">
+              <li class="list-group-item" >No books found...</li>
             </ul>
           </div>
         </nav>
