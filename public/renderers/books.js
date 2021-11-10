@@ -22,7 +22,7 @@ function bookDetailsTemplate(book, author) {
         ${book.title}
       </div>
       <div class="card-body">
-        <h5 class="card-title h6">Written by ${author.name.first} ${author.name.last}</h5>
+        <h5 class="card-title h6" style="color: black;">Written by ${author.name.first} ${author.name.last}</h5>
         <p class="card-text">Genre: <span class="text-info">${book.genre}</span></p>
       </div>
     </div>
