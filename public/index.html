@@ -1,155 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <link rel="icon" href="favicon.png" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous"
-    />
 
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="icon" href="favicon.png" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
 
-    <title>Local Libary</title>
-  </head>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
 
-  <body>
-    <header class="container-fluid bg-light shadow bg-white rounded">
-      <nav class="row align-items-center">
-        <h3 class="px-4 font-weight-bold">Local Library</h3>
-        <div class="col">
-          <ul class="nav justify-content-end">
-            <li class="nav-item mr-4 pr-4">
-              <a class="nav-link active" href="./index.html"
-                ><img
-                  src="https://img.icons8.com/material-sharp/30/000000/home.png"
-              /></a>
-              <p class="text-center"  style="font-size: 20px;">Home</p>
-            </li>
-            <li class="nav-item mr-4 pr-4">
-              <a class="nav-link" href="./books.html"
-                ><img
-                  src="https://img.icons8.com/ios-glyphs/30/000000/statistics--v1.png"
-              /></a>
-              <p class="text-center" style="font-size: 20px;">Book Stats</p>
-            </li>
-            <li class="nav-item mr-4">
-              <a class="nav-link" href="./accounts.html"
-                ><img
-                  src="https://img.icons8.com/ios-glyphs/30/000000/group.png"
-              /></a>
-              <p class="text-center" style="font-size: 20px;">Account Stats</p>
-            </li>
+  <title>Local Libary</title>
+</head>
+
+<body style="background-color: rgb(9, 4, 82);">
+  <header class="container-fluid bg-light shadow text-white rounded">
+    <nav class="row align-items-center text-no-wrap" style="background-color: crimson;">
+      <h3 class="px-4 font-weight-bold">Local Library</h3>
+      <div class="col">
+        <ul class="nav justify-content-end">
+          <li class="nav-item mr-2">
+            <a class="nav-link active" href="./index.html"><img
+                src="https://img.icons8.com/material-sharp/24/ffffff/home.png" /></a>
+            <p class="text-center" style="font-size: 20px;">Home</p>
+          </li>
+          <li class="nav-item mr-2">
+            <a class="nav-link" href="./books.html"><img
+                src="https://img.icons8.com/ios-glyphs/24/ffffff/statistics--v1.png" /></a>
+            <p class="text-center" style="font-size: 20px;">Book Stats</p>
+          </li>
+          <li class="nav-item mr-2">
+            <a class="nav-link" href="./accounts.html"><img class="ml-2"
+                src="https://img.icons8.com/ios-glyphs/24/ffffff/group.png" /></a>
+            <p class="text-center" style="font-size: 20px;">Account Stats</p>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container my-4">
+    <h2 class="text-white font-weight-bold ml-2">Home</h2>
+    <section class="row">
+      <!-- General stats -->
+      <article class="mt-4 col-12 col-md">
+        <div class="card border-0">
+          <h4 class="py-2 card-header border-0 text-white font-weight-bold d-flex justify-content-center"
+            style="background-color: crimson;">Book Stats</h4>
+          <div class="card-body">
+            <p class="card-text">
+              There are
+              <span id="total-book-count" class="font-weight-bold" style="color: black">0</span>
+              total books at the library.
+            </p>
+            <p class="card-text">
+              There are
+              <span id="total-borrow-count" class="font-weight-bold" style="color: black">0</span>
+              books currently being borrowed.
+            </p>
+            <p class="card-text">
+              There are
+              <span id="total-accounts-count" class="font-weight-bold" style="color: black">0</span>
+              accounts registered with the library.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Most common genres -->
+      <article class="mt-4 col-12 col-md">
+        <div class="card border-0">
+          <h4 class="py-2 card-header text-white font-weight-bold d-flex justify-content-center"
+            style="background-color: crimson;">Most Common Genres</h4>
+          <div class="card-body">
+            <p class="card-text">
+              Out of all of the books listed, the following genres are the
+              ones that occurred the most number of times.
+            </p>
+          </div>
+          <ul id="most-common-genres" class="list-group list-group-flush">
+            <li class="list-group-item">No genres listed.</li>
           </ul>
         </div>
-      </nav>
-    </header>
+      </article>
+    </section>
 
-    <main class="container my-4">
-      <h2 class="font-weight-bold ml-2">Home</h2>
-      <section class="row">
-        <!-- General stats -->
-        <article class="mt-4 col-12 col-md">
-          <div class="card">
-            <h4 class="py-4 card-header bg-dark text-white font-weight-bold d-flex justify-content-center">Book Stats</h4>
-            <div class="card-body">
-              <p class="card-text">
-                There are
-                <span
-                  id="total-book-count"
-                  class="font-weight-bold text-primary"
-                  >0</span
-                >
-                total books at the library.
-              </p>
-              <p class="card-text">
-                There are
-                <span
-                  id="total-borrow-count"
-                  class="font-weight-bold text-primary"
-                  >0</span
-                >
-                books currently being borrowed.
-              </p>
-              <p class="card-text">
-                There are
-                <span
-                  id="total-accounts-count"
-                  class="font-weight-bold text-primary"
-                  >0</span
-                >
-                accounts registered with the library.
-              </p>
-            </div>
+    <section class="row">
+      <!-- Most popular books -->
+      <article class="mt-4 col-12 col-md">
+        <div class="card border-0">
+          <h4 class="py-2 card-header text-white font-weight-bold d-flex justify-content-center"
+            style="background-color: crimson;">Most Popular Books</h4>
+          <div class="card-body">
+            <p class="card-text">
+              Out of all of the books listed, the following are the most
+              popular. This number is generated based on the number of times a
+              book has been taken out.
+            </p>
           </div>
-        </article>
+          <ul id="most-popular-books" class="list-group list-group-flush">
+            <li class="list-group-item">No books listed.</li>
+          </ul>
+        </div>
+      </article>
 
-        <!-- Most common genres -->
-        <article class="mt-4 col-12 col-md">
-          <div class="card">
-            <h4 class="py-4 card-header bg-dark text-white font-weight-bold d-flex justify-content-center">Most Common Genres</h4>
-            <div class="card-body">
-              <p class="card-text">
-                Out of all of the books listed, the following genres are the
-                ones that occurred the most number of times.
-              </p>
-            </div>
-            <ul id="most-common-genres" class="list-group list-group-flush">
-              <li class="list-group-item">No genres listed.</li>
-            </ul>
+      <!-- Most popular authors -->
+      <article class="mt-4 col-12 col-md">
+        <div class="card border-0">
+          <h4 class="py-2 card-header text-white font-weight-bold d-flex justify-content-center"
+            style="background-color: crimson;">Most Popular Authors</h4>
+          <div class="card-body">
+            <p class="card-text">
+              Out of all of the books listed, the following authors are the
+              most popular. This number is generated based on the number of
+              times an author's book has been taken out.
+            </p>
           </div>
-        </article>
-      </section>
+          <ul id="most-popular-authors" class="list-group list-group-flush">
+            <li class="list-group-item">No authors listed.</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+  </main>
 
-      <section class="row">
-        <!-- Most popular books -->
-        <article class="mt-4 col-12 col-md">
-          <div class="card">
-            <h4 class="py-4 card-header bg-dark text-white font-weight-bold d-flex justify-content-center">Most Popular Books</h4>
-            <div class="card-body">
-              <p class="card-text">
-                Out of all of the books listed, the following are the most
-                popular. This number is generated based on the number of times a
-                book has been taken out.
-              </p>
-            </div>
-            <ul id="most-popular-books" class="list-group list-group-flush">
-              <li class="list-group-item">No books listed.</li>
-            </ul>
-          </div>
-        </article>
+  <script src="./data/accounts.js"></script>
+  <script src="./data/authors.js"></script>
+  <script src="./data/books.js"></script>
+  <script src="./setup.js"></script>
+  <script src="./src/home.js"></script>
+  <script src="./renderers/home.js"></script>
+</body>
 
-        <!-- Most popular authors -->
-        <article class="mt-4 col-12 col-md">
-          <div class="card">
-            <h4 class="py-4 card-header bg-dark text-white font-weight-bold d-flex justify-content-center">Most Popular Authors</h4>
-            <div class="card-body">
-              <p class="card-text">
-                Out of all of the books listed, the following authors are the
-                most popular. This number is generated based on the number of
-                times an author's book has been taken out.
-              </p>
-            </div>
-            <ul id="most-popular-authors" class="list-group list-group-flush">
-              <li class="list-group-item">No authors listed.</li>
-            </ul>
-          </div>
-        </article>
-      </section>
-    </main>
-
-    <script src="./data/accounts.js"></script>
-    <script src="./data/authors.js"></script>
-    <script src="./data/books.js"></script>
-    <script src="./setup.js"></script>
-    <script src="./src/home.js"></script>
-    <script src="./renderers/home.js"></script>
-  </body>
 </html>
