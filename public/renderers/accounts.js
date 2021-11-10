@@ -2,7 +2,7 @@
 function accountLinkTemplate(account) {
   return `
     <li class="list-group-item">
-      <a data-id="${account.id}" href="javascript:void(0);">
+      <a data-id="${account.id}" style="color: black;" href="javascript:void(0);">
         ${account.name.last}, ${account.name.first}
       </a>
     </li>
@@ -13,7 +13,7 @@ function accountDetailsTemplate(account, borrowCount = 0) {
   const fullName = `${account.name.first} ${account.name.last}`;
   return `
     <div class="card">
-      <div class="card-header font-weight-bold">
+      <div class="card-header font-weight-bold" style="color: black;">
         ${fullName}
       </div>
       <div class="card-body">
@@ -25,7 +25,7 @@ function accountDetailsTemplate(account, borrowCount = 0) {
             <p><strong>Email:</strong> ${account.email}</p>
             <p><strong>Account Created:</strong> ${account.registered}</p>
             <p class="mb-0">
-              Borrowed from the library <span class="text-primary font-weight-bold">
+              Borrowed from the library <span class="font-weight-bold">
                 ${borrowCount}
               </span> times.
             </p>

@@ -1,15 +1,15 @@
 // Templates
 function returnedBadgeTemplate(returned) {
   return `
-    <span class="badge badge-${returned ? "light" : "dark"}">
-      ${returned ? "Returned" : "Loaned Out"}
+    <span class="font-weight-normal" badge-${returned ? "light" : "dark"}">
+      ${returned ? "(returned)" : "Loaned Out"}
     </span>
   `;
 }
 function bookLinkTemplate(book, returned = false) {
   return `
     <li class="list-group-item">
-      <a data-id="${book.id}" href="javascript:void(0);">${book.title}</a>
+      <a data-id="${book.id}" style="color: black;" href="javascript:void(0);">${book.title}</a>
       ${returnedBadgeTemplate(returned)}
     </li>
   `;
